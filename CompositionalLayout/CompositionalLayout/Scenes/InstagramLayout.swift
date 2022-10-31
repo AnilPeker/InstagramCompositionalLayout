@@ -15,6 +15,12 @@ class InstagramLayout {
             (section, env) ->  NSCollectionLayoutSection in
             
             // MARK: - ITEMS
+            let carouselItem = NSCollectionLayoutItem (
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalWidth(1))
+            )
+            
             let bigItem = NSCollectionLayoutItem(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(2/3),
@@ -37,6 +43,14 @@ class InstagramLayout {
             )
             
             // MARK: - GROUPS
+            
+            let carouselGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalWidth(1)),
+                subitem: carouselItem,
+                count: 1
+            )
             
             let verticalStackGroup = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(
@@ -90,12 +104,18 @@ class InstagramLayout {
             
             
             // MARK: - SECTION
+            let carouselSection = NSCollectionLayoutSection(group: carouselGroup)
+            carouselSection.orthogonalScrollingBehavior = .groupPaging
             
-            let section = NSCollectionLayoutSection(group: verticalMainStackGroup)
+            let defaultSection = NSCollectionLayoutSection(group: verticalMainStackGroup)
             
             // MARK: - RETURN
-            
-            return section
+            switch section {
+            case 0:
+                return carouselSection
+            default:
+                return defaultSection
+            }
         }
     }
     

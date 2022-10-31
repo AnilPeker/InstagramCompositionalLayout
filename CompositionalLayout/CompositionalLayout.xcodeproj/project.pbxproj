@@ -74,8 +74,8 @@
 			children = (
 				4FD83AF826EF350200289313 /* View */,
 				4FD83AE626EF345E00289313 /* ViewController.swift */,
-				4FD83AE826EF345E00289313 /* Main.storyboard */,
 				4F5186B726F886E20024C2BD /* InstagramLayout.swift */,
+				4FD83AE826EF345E00289313 /* Main.storyboard */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
