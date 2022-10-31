@@ -15,10 +15,18 @@ class InstagramLayout {
             (section, env) ->  NSCollectionLayoutSection in
             
             // MARK: - ITEMS
+            let tagItem = NSCollectionLayoutItem (
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalHeight(1)
+                )
+            )
+            
             let carouselItem = NSCollectionLayoutItem (
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalWidth(1))
+                    heightDimension: .fractionalWidth(1)
+                )
             )
             
             let bigItem = NSCollectionLayoutItem(
@@ -43,6 +51,14 @@ class InstagramLayout {
             )
             
             // MARK: - GROUPS
+            
+            let tagCarouselGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .absolute(70),
+                    heightDimension: .absolute(20)),
+                subitem: tagItem,
+                count: 1
+            )
             
             let carouselGroup = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
@@ -104,6 +120,11 @@ class InstagramLayout {
             
             
             // MARK: - SECTION
+            let tagCarouselSection = NSCollectionLayoutSection(group: tagCarouselGroup)
+            tagCarouselSection.orthogonalScrollingBehavior = .continuous
+            tagCarouselSection.interGroupSpacing = 10
+            tagCarouselSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5)
+            
             let carouselSection = NSCollectionLayoutSection(group: carouselGroup)
             carouselSection.orthogonalScrollingBehavior = .groupPaging
             
@@ -112,6 +133,8 @@ class InstagramLayout {
             // MARK: - RETURN
             switch section {
             case 0:
+                return tagCarouselSection
+            case 1:
                 return carouselSection
             default:
                 return defaultSection

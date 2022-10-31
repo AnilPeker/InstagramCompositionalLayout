@@ -22,7 +22,7 @@ class CollectionViewCell: UICollectionViewCell {
                       "resim-4",
                       "resim-5"]
         
-        let strongImages = images.compactMap{ UIImage(named: $0)}
+        let strongImages = images.compactMap{ UIImage(named: $0) }
         
         let randomImage = strongImages.randomElement()
         

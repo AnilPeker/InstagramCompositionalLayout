@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         collectionView.register(CollectionViewCell.nib,
                                 forCellWithReuseIdentifier: CollectionViewCell.identifier)
         
+        collectionView.register(TagsCollectionViewCell.nib,
+                                forCellWithReuseIdentifier: TagsCollectionViewCell.identifier)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -31,12 +34,14 @@ class ViewController: UIViewController {
 }
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
+            return 10
+        case 1:
             return 5
         default:
             return 30
@@ -44,10 +49,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath)
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsCollectionViewCell.identifier, for: indexPath) as! TagsCollectionViewCell
+            cell.setupUI(index: indexPath.row)
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath)
+            return cell
+        }
     }
-    
-    
 }
 

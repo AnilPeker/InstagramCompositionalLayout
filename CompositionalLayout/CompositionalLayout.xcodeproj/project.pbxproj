@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270EA2BD290FB3A3001430CF /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EA2BB290FB3A3001430CF /* TagsCollectionViewCell.swift */; };
+		270EA2BE290FB3A3001430CF /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270EA2BC290FB3A3001430CF /* TagsCollectionViewCell.xib */; };
 		4F5186B826F886E20024C2BD /* InstagramLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5186B726F886E20024C2BD /* InstagramLayout.swift */; };
 		4FD83AE326EF345E00289313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD83AE226EF345E00289313 /* AppDelegate.swift */; };
 		4FD83AE526EF345E00289313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD83AE426EF345E00289313 /* SceneDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270EA2BB290FB3A3001430CF /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		270EA2BC290FB3A3001430CF /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F5186B726F886E20024C2BD /* InstagramLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLayout.swift; sourceTree = "<group>"; };
 		4FD83ADF26EF345E00289313 /* CompositionalLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD83AE226EF345E00289313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			children = (
 				4FD83AF926EF351800289313 /* CollectionViewCell.swift */,
 				4FD83AFA26EF351800289313 /* CollectionViewCell.xib */,
+				270EA2BB290FB3A3001430CF /* TagsCollectionViewCell.swift */,
+				270EA2BC290FB3A3001430CF /* TagsCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD83AEF26EF345F00289313 /* LaunchScreen.storyboard in Resources */,
+				270EA2BE290FB3A3001430CF /* TagsCollectionViewCell.xib in Resources */,
 				4FD83AEC26EF345F00289313 /* Assets.xcassets in Resources */,
 				4FD83AFC26EF351800289313 /* CollectionViewCell.xib in Resources */,
 				4FD83AEA26EF345E00289313 /* Main.storyboard in Resources */,
@@ -172,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD83AE726EF345E00289313 /* ViewController.swift in Sources */,
+				270EA2BD290FB3A3001430CF /* TagsCollectionViewCell.swift in Sources */,
 				4FD83AE326EF345E00289313 /* AppDelegate.swift in Sources */,
 				4FD83AFB26EF351800289313 /* CollectionViewCell.swift in Sources */,
 				4FD83AE526EF345E00289313 /* SceneDelegate.swift in Sources */,
