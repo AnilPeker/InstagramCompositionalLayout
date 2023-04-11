@@ -10,8 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let layout = InstagramLayout()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +27,7 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let layout = InstagramLayout()
         collectionView.collectionViewLayout = layout.generateLayout()
     }
 }
@@ -40,11 +39,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 10
+            return 30
         case 1:
             return 5
         default:
-            return 30
+            return 34
         }
     }
     
